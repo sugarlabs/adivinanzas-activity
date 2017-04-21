@@ -30,8 +30,7 @@ nv = narrativa.Visual()
 aviso = "\n\n\n --- Presiona cualquier tecla para continuar ---"
 
 # "i" va a ser el numero de linea que estamos usando, entre 0 y el total.
-for i in {1}: 
-#for i in range(0, len(adivinanza)):
+for i in range(0, len(adivinanza)):
     
     # primero dibujamos la imagen de fondo
     nv.fondo(fondo[i])
