@@ -1,0 +1,5 @@
+cebolla,la cebolla
+huevo,el huevo
+manzanilla,la manzanilla
+la sal,sal
+pera,la pera

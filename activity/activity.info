@@ -1,0 +1,6 @@
+[Activity]
+name = Adivinanzas 
+bundle_id = org.somosazucar.Adivinanzas
+exec = sugar-activity AdivinanzasActivity.AdivinanzasActivity
+icon = activity-generic
+activity_version = 2

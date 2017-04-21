@@ -1,0 +1,5 @@
+imagenes/Cebolla.jpg
+imagenes/Huevo.jpg
+imagenes/Manzanilla.jpg
+imagenes/Sal.jpg
+imagenes/Pera.jpg
