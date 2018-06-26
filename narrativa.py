@@ -5,7 +5,7 @@ from pygame.locals import *
 
 from eztext.eztext import Input
 from textrect.textrect import render_textrect
-import gtk
+from gi.repository import Gtk
 
 resolucion = (800, 600)
 reloj = pygame.time.Clock()
@@ -48,8 +48,8 @@ class Visual:
         listo = False
         while not listo:
             # Ceder control a Sugar para la botonera 
-            while gtk.events_pending():
-                gtk.main_iteration()
+            while Gtk.events_pending():
+                Gtk.main_iteration()
 
             eventos = pygame.event.get()
             for event in eventos:
@@ -123,8 +123,8 @@ class Visual:
             listo = False
             while not listo:
                 # Ceder control a Sugar para la botonera 
-                while gtk.events_pending():
-                    gtk.main_iteration()
+                while Gtk.events_pending():
+                    Gtk.main_iteration()
 
                 eventos = pygame.event.get()
                 for event in eventos:
