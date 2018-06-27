@@ -1,14 +1,16 @@
 from gettext import gettext as _
 
 import sys
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 import pygame
 
-import sugar.activity.activity
-from sugar.graphics.toolbarbox import ToolbarBox
-from sugar.activity.widgets import ActivityToolbarButton
-from sugar.graphics.toolbutton import ToolButton
-from sugar.activity.widgets import StopButton
+import sugar3.activity.activity
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.activity.widgets import StopButton
 
 
 sys.path.append('..')  # Import sugargame package from top directory.
@@ -19,7 +21,7 @@ class JuegoAdivinanzas:
     def jugar(self):
         import adivinanzas
 
-class AdivinanzasActivity(sugar.activity.activity.Activity):
+class AdivinanzasActivity(sugar3.activity.activity.Activity):
     def __init__(self, handle):
         super(AdivinanzasActivity, self).__init__(handle)
 
@@ -28,20 +30,15 @@ class AdivinanzasActivity(sugar.activity.activity.Activity):
         # Create the game instance.
         self.game = JuegoAdivinanzas() 
 
+        self.game.canvas = sugargame.canvas.PygameCanvas(
+                self,
+                main=self.game.jugar,
+                modules=[pygame.display, pygame.font])
+        self.set_canvas(self.game.canvas)
+        self.game.canvas.grab_focus()
+
         # Build the activity toolbar.
         self.build_toolbar()
-
-        # Build the Pygame canvas.
-        self._pygamecanvas = sugargame.canvas.PygameCanvas(self)
-
-        # Note that set_canvas implicitly calls read_file when
-        # resuming from the Journal.
-        self.set_canvas(self._pygamecanvas)
-        self._pygamecanvas.grab_focus()
-
-        # Start the game running (self.game.run is called when the
-        # activity constructor returns).
-        self._pygamecanvas.run_pygame(self.game.jugar)
 
     def build_toolbar(self):
         toolbar_box = ToolbarBox()
@@ -54,7 +51,7 @@ class AdivinanzasActivity(sugar.activity.activity.Activity):
 
         # Blank space (separator) and Stop button at the end:
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         toolbar_box.toolbar.insert(separator, -1)
