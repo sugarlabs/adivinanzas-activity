@@ -4,3 +4,5 @@ bundle_id = org.somosazucar.Adivinanzas
 exec = sugar-activity AdivinanzasActivity.AdivinanzasActivity
 icon = activity-generic
 activity_version = 3
+repository = https://github.com/sugarlabs/adivinanzas-activity.git
+license = GPLv3+
