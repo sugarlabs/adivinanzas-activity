@@ -7,8 +7,7 @@ def leer(nombre_archivo):
     archivo = open(nombre_archivo, "r")
     
     # Ahora tenemos todo el contenido del archivo en la variable "cuerpo".
-    cuerpo = unicode(archivo.read())
-    cuerpo.decode("utf-8")
+    cuerpo = str(archivo.read())
     # unicode() transforma el string en un string con soporte de acentos
     # decode() descifra los acentos desde los archivos
 
@@ -42,22 +41,22 @@ for i in range(0, len(adivinanza)):
     nv.imprimir(adivinanza[i])
 
     while True:
-        respuesta = nv.preguntar(u"¿quien soy? ")
+        respuesta = nv.preguntar("¿quien soy? ")
 
         if respuesta in correctas[i].split(","):
             nv.silencio()
-            nv.imprimir(u"¡Acertaste!" + aviso)
+            nv.imprimir("¡Acertaste!" + aviso)
             nv.esperar()
             nv.imprimir(infodato[i] + aviso, mini=True, 
                         fondo=narrativa.GRIS_CLARO, color=narrativa.GRIS_OSCURO)
             nv.esperar()
             break
         else:
-            nv.imprimir(u"¡Intenta otra vez!" + aviso)
+            nv.imprimir("¡Intenta otra vez!" + aviso)
             nv.esperar()
             nv.limpiar()
             nv.imprimir(adivinanza[i])
 
-nv.imprimir(u"¡Gracias por jugar!\n\nPresiona una tecla para terminar el juego.")
+nv.imprimir("¡Gracias por jugar!\n\nPresiona una tecla para terminar el juego.")
 nv.esperar()
 sys.exit()
