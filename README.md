@@ -7,11 +7,10 @@ Developed with the children of the Python Videogame Craftsmanship Workshop.
 How to use?
 -----------
 
-Adivinanzas is part of the Sugar desktop.  Please refer to;
+Adivinanzas is not a part of the Sugar desktop.  Please refer to;
 
 * [How to Get Sugar on sugarlabs.org](https://sugarlabs.org/),
-* [How to use Sugar](https://help.sugarlabs.org/),
-* [Download Adivinanzas](https://activities.sugarlabs.org/en-US/sugar/addon/4737).
+* [How to use Sugar](https://help.sugarlabs.org/).
 
 Reporting Bugs
 --------------
