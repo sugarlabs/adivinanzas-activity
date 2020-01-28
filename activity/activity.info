@@ -5,4 +5,3 @@ exec = sugar-activity3 AdivinanzasActivity.AdivinanzasActivity
 icon = activity-generic
 activity_version = 3
 repository = https://github.com/sugarlabs/adivinanzas-activity.git
-license = GPLv3+

@@ -7,10 +7,8 @@ def leer(nombre_archivo):
     archivo = open(nombre_archivo, "r")
     
     # Ahora tenemos todo el contenido del archivo en la variable "cuerpo".
-    cuerpo = str(archivo.read())
-    # unicode() transforma el string en un string con soporte de acentos
-    # decode() descifra los acentos desde los archivos
-
+    cuerpo = archivo.read()
+    
     # "lineas" es una lista de strings representando cada linea del archivo.
     lineas = cuerpo.splitlines()
 
